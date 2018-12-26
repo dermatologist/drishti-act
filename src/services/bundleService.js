@@ -1,13 +1,13 @@
 import 'fhirclient';
 
-const Careplans = function Careplans(pId) {
+const Bundles = function Bundles(pId) {
     const smart = window.FHIR.client({
         serviceUrl: process.env.FHIR_BASE,
         patientId: pId,
     });
 
     // $.Deferred
-    return smart.patient.api.search({type: 'Careplan'});
+    return smart.api.search({type: 'Bundle', query: {'identifier.value': {$exact: pId}}});
 };
 
-export default Careplans;
+export default Bundles;
