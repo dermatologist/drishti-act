@@ -3,8 +3,8 @@
     <h1>{{ msg }}</h1>
       <div>
           <ul>
-              <li v-bind:key="post.uuid" v-for="post in conditions">
-                  {{post.uuid}} | {{post.display}}
+              <li v-bind:key="post.uuid" v-for="bundle in bundles">
+                  {{bundle}}
               </li>
           </ul>
           <p v-if="isLoading">loading posts...</p>
@@ -34,13 +34,13 @@
 
 <script>
 
-import Conditions from '../services/conditionService';
+    import Bundles from '../services/bundleService';
 
-/*
-The services return $.deferred object that gets saved in
-deferredPromise below.
+    /*
+    The services return $.deferred object that gets saved in
+    deferredPromise below.
 
-*/
+    */
 export default {
   name: 'HelloPatient',
   props: {
@@ -74,7 +74,7 @@ export default {
     TODO: This needs tweaking. Always returns [].
     The getPromise proceses the c.data.entry which is an array
     */
-    conditions() {
+      bundles() {
       let toReturn = [];
       if (this.deferredPromise != null) {
         this.deferredPromise.done((c) => {
@@ -92,7 +92,7 @@ export default {
       this.$emit('input', this.search);
 
       // Send request
-      this.deferredPromise = Conditions(this.search);
+        this.deferredPromise = Bundles(this.search);
     },
 
     filterResults() {
