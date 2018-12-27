@@ -2,7 +2,7 @@ import 'fhirclient';
 
 const Bundles = function Bundles(pId) {
     const smart = window.FHIR.client({
-        serviceUrl: process.env.VUE_APP_FHIR_BASE,
+        serviceUrl: process.env.VUE_APP_omhOnFhirAPIBase + process.env.VUE_APP_omhOnFhirPath,
         patientId: pId,
     });
 
