@@ -3,8 +3,8 @@
     <h1>{{ msg }}</h1>
       <div>
           <ul>
-              <li v-bind:key="post.uuid" v-for="bundle in bundles">
-                  {{bundle}}
+              <li v-bind:key="resource.id" v-for="resource in bundles">
+                  {{resource}}
               </li>
           </ul>
           <p v-if="isLoading">loading posts...</p>
@@ -89,7 +89,7 @@ export default {
 
     onChange() {
       // Let's warn the parent that a change was made
-      this.$emit('input', this.search);
+        this.$emit('input', this.search);
 
       // Send request
         this.deferredPromise = Bundles(this.search);
@@ -143,7 +143,6 @@ export default {
   watch: {
     pending(val, oldValue) {
       // actually compare them
-      console.log(val, oldValue);
       if (val !== oldValue) {
         this.isOpen = true;
         this.isLoading = false;
