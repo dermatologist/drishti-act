@@ -10,8 +10,7 @@ Vue.use(VueRouter);
 
 // 3. Create the router
 const router = new VueRouter({
-    mode: 'history',
-    base: __dirname,
+    base: '/',
     routes: [
         {path: '/user/:uuid', component: HelloPatient}
     ]
