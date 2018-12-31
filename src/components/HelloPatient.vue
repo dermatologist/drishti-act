@@ -152,6 +152,8 @@ export default {
 
   mounted() {
     document.addEventListener('click', this.handleClickOutside);
+      this.search = this.$route.params.uuid;
+      this.onChange();
   },
 
   destroyed() {

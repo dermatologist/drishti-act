@@ -11,7 +11,8 @@
   "dependencies": {
     "vue": "^2.5.17",
     "fhirclient": "^0.1.12",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
